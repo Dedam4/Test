@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Raleway:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header class="header" id="header">
+            <div class="container">
+                <div class="header__inner">
+                    <div class="header__text">Введение в веб-технологии</div>
+                </div>
+            </div>
+
+        </header>
+        <div class="container">
+            <nav class="toc">
+                <h2 class="toc__title _color">Содержание</h2>
+                <ol class="toc__list">
+                    <li class="toc__item"><a class="toc__link" href="#basic">Основыне функции браузера</a>
+                    <li class="toc__item"><a class="toc__link" href="#structure">Струткура верхнего уровня</a>
+                    <li class="toc__item"><a class="toc__link" href="#display-module">Модуль отображения</a></li>
+                    <ol class="toc__list">
+                        <li class="toc__item"><a class="toc__link" href="#display-module-sub">Модуль отображения</a>
+                        <li class="toc__item"><a class="toc__link" href="#scheme">Схема работы</a>
+                    </ol>
+                </ol>
+            </nav>
+        </div>
+
+
+        <main class="main">
+            <div class="container">
+                <div class="main__inner">
+                    <h1 class="main__main-title _color">Как работает браузер?</h1>
+                    <article class="article" id="basic">
+                        <h2 class="article__title">Основные функции браузера</h2>
+                        <p class="article__text">Основное предназначение браузера – отображать веб-ресурсы. Для этого на
+                            сервер
+                            отправляется запрос, а результат выводится в окне браузера. Под ресурсами в основном
+                            подразумеваются HTML-документы, однако это также может быть PDF-файл, картинка или иное
+                            содержание. Расположение ресурса определяется с помощью URI (унифицированного идентификатора
+                            ресурсов).</p>
+
+                        <p class="article__text"> То, каким образом браузер обрабатывает и отображает HTML-файлы,
+                            определено
+                            спецификациями HTML и
+                            CSS. Они разрабатываются Консорциумом <a href="https://www.w3.org/Consortium/"
+                                target="_blank">W3C</a>,
+                            который внедряет стандарты для Интернета.
+                            Многие годы браузеры отвечали лишь части спецификаций, и для них создавались отдельные
+                            расширения. Для веб-разработчиков это означало серьезные проблемы с совместимостью. Сегодня
+                            большинство браузеров в большей или меньшей степени отвечает всем спецификациям.</p>
+
+                        <p class="article__text">Пользовательские интерфейсы разных браузеров имеют много общего.
+                            Основные
+                            элементы интерфейса браузера перечислены ниже.</p>
+
+                        <ul class="acticle__list">
+                            <li class="acticle__list__item">Адресная строка для ввода URI</li>
+                            <li class="acticle__list__item">Кнопки навигации "Назад" и "Вперед"</li>
+                            <li class="acticle__list__item">Закладки</li>
+                            <li class="acticle__list__item">Кнопки обновления и остановки загрузки страницы</li>
+                            <li class="acticle__list__item">Кнопка "Домой" для перехода на главную страницу</li>
+                        </ul>
+                    </article>
+
+                    <article class="article" id="structure">
+                        <h2 class="article__title">Структура верхнего уровня</h2>
+                        <p class="article__text">Ниже перечислены основные компоненты браузера</p>
+                        <ol class="acticle__list">
+                            <li class="acticle__list__item"><strong>Пользовательский интерфейс</strong> – включает
+                                адресную строку,
+                                кнопки "Назад" и "Вперед", меню закладок и т. д. К нему относятся все элементы, кроме
+                                окна, в котором отображается запрашиваемая страница.</li>
+
+                            <li class="acticle__list__item"><strong>Механизм браузера</strong> – управляет
+                                взаимодействием интерфейса и
+                                модуля отображения.</li>
+
+                            <li class="acticle__list__item"><strong>Модуль отображения</strong> – отвечает за вывод
+                                запрошенного
+                                содержания на экран. Например, если запрашивается HTML-документ, модуль отображения
+                                выполняет синтаксический анализ кода HTML и CSS и выводит результат на экран.</li>
+
+                            <li class="acticle__list__item"><strong>Сетевые компоненты</strong> – предназначены для
+                                выполнения сетевых
+                                вызовов, таких как HTTP-запросы. Их интерфейс не зависит от типа платформы, для каждого
+                                из которых есть собственные реализации.</li>
+
+                            <li class="acticle__list__item"><strong>Исполнительная часть пользовательского
+                                    интерфейса</strong> –
+                                используется для отрисовки основных виджетов, таких как окна и поля со списками. Ее
+                                универсальный интерфейс также не зависит от типа платформы. Исполнительная часть всегда
+                                применяет методы пользовательского интерфейса конкретной операционной системы.</li>
+
+                            <li class="acticle__list__item"><strong>Интерпретатор JavaScript</strong> – используется для
+                                синтаксического
+                                анализа и выполнения кода JavaScript.</li>
+
+                            <li class="acticle__list__item"><strong>Хранилище данных</strong> – необходимо для
+                                сохраняемости процессов.
+                                Браузер сохраняет на жесткий диск данные различных типов, например файлы cookie. В новой
+                                спецификации HTML (HTML5) имеется определение термина "веб-база данных": это полноценная
+                                (хотя и облегченная) браузерная база данных.</li>
+                        </ol>
+
+                        <figure class="acticle__figure">
+                            <img src="./img/img(1).png" alt="" class="acticle__img">
+                            <figcaption class="figure__name">Рисунок - 1. Основные компоненты браузера.</figcaption>
+                        </figure>
+
+
+
+                    </article>
+
+
+                    <article class="article" id="display-module">
+                        <h2 class="article__title">Модуль отображения</h2>
+                        <p class="article__text">Как можно догадаться по названию, модуль отображения отвечает за вывод
+                            запрошенного содержания на экране браузера.</p>
+
+                        <p class="article__text">По умолчанию он способен отображать HTML- и XML-документы, а также
+                            картинки. Специальные
+                            подключаемые модули (расширения для браузеров) делают возможным отображение другого
+                            содержания, например PDF-файлов. Однако эта глава посвящена основным функциям: отображению
+                            HTML-документов и картинок, отформатированных с помощью стилей CSS.</p>
+
+                        <h3 class="article__title _second" id="display-module-sub">Модули отображения</h3>
+                        <p class="article__text">В интересующих нас браузерах (Firefox, Chrome и Safari) используются
+                            два модуля отображения. В Firefox применяется Gecko – собственная разработка Mozilla, а в
+                            Safari и Chrome используется WebKit.</p>
+                        <p class="article__text">ПWebKit представляет собой модуль отображения с открытым исходным
+                            кодом, который был изначально разработан для платформы Linux и адаптирован компанией Apple
+                            для Mac OS и Windows. Подробные сведения можно найти на сайте <a href="https://webkit.org/"
+                                target="_blank">webkit.org</a>.</p>
+
+
+
+                        <article class="article" id="">
+                            <h3 class="article__title _second" id="scheme">Схема работы</h3>
+                            <p class="article__text">Модуль отображения получает содержание запрошенного документа по
+                                протоколу сетевого уровня, обычно фрагментами по 8 КБ.</p>
+
+                            <p class="article__text">Схема дальнейшей работы модуля отображения выглядит приведенным
+                                ниже образом.</p>
+                            <figure class="acticle__figure">
+                                <img src="./img/img2.png" alt="схема" class="acticle__img">
+                                <figcaption class="figure__name">Рисунок - 2. Схема работы модуля отображения..
+                                </figcaption>
+                            </figure>
+
+                            <p class="article__text">Модуль отображения выполняет синтаксический анализ HTML-документа и
+                                переводит теги в узлы <a
+                                    href="https://ru.wikipedia.org/wiki/Document_Object_Model">DOM</a> в дереве
+                                содержания. Информация о стилях извлекается как из
+                                внешних CSS-файлов, так и из элементов style. Эта информация и инструкции по отображению
+                                в HTML-файле используются для создания еще одного дерева – дерева отображения.</p>
+
+
+                        </article>
+
+
+                    </article>
+
+                </div>
+
+            </div>
+
+            <button class="main__btn ">&#8593</button>
+
+        </main>
+    </div>
+    <script src="../app.js"></script>
+</body>
+
+</html>
